@@ -44,3 +44,12 @@ oznaka varchar(10) not null,
 vrijednost varchar(50) not null,
 polica int
 );
+
+
+alter table skladiste add foreign key (trgovina) references trgovina(id);
+
+alter table red add foreign key (skladiste) references skladiste(id);
+
+alter table polica add foreign key (red) references red(id);
+
+alter table roba add foreign key (polica) references polica(id);
